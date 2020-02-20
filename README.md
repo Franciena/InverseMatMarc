@@ -125,4 +125,21 @@ C:\...\InverseMatMarc
 ```
 C:\...\InverseMatMarc\sph_mid
 ```
+3. Run both the .mud models within Marc, and save the output files.
+.mud files:
+```
+sym_test_fem.mud
+sym_test_exp.mud
+```
+Saving output file from the run window:
+```
+Open Post File > Save
+```
+Saving the "pointfem" (from the sym_test_fem.mud model)  and "pointexp" (from the sym_test_exp.mud model) files from the post-processing window:
+```
+Open Post File > History plot > All Incs > Add Curves > x-axis : - Global variables  > y-axis : - Contact Body Variables
+                                                                 - time                         - Contact Body: Load (indenter)
+                                                                                                - Pos Y
+> Add curve > OK > Fit > Write > pointfem/pointexp > Save
+```
 3. Run the "main_code.py" file in the InverseMatMarc folder.
