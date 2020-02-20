@@ -33,6 +33,9 @@ This project was setup to work with Windows. The DOT optimisation library is req
 |[sym_test_fem_job1.sts](https://github.com/Franciena/InverseMatMarc/tree/master/sph_mid/sym_test_fem_job1.sts) | The Status file from the Numerical model. Used to determine the EXIT CODE. |
 |[sym_test_fem.mud](https://github.com/Franciena/InverseMatMarc/tree/master/sph_mid/sym_test_fem.mud)      | The FE model for the Numerical model for the example. |
 |[sym_test_exp.mud](https://github.com/Franciena/InverseMatMarc/tree/master/sph_mid/sym_test_exp.mud)      | The FE model for the Experimental model for the example. |
+|[pointexp](https://github.com/Franciena/InverseMatMarc/blob/master/sph_mid/pointexp)                      | The Experimental model's output file, saved by the user, to log the the given y-position of the indenter with each time interval.|
+|[pointfem](https://github.com/Franciena/InverseMatMarc/blob/master/sph_mid/pointfem)                      | The Numerical model's output file, saved by the user, to log the the given y-position of the indenter with each time interval.|
+
 
 ## Example problem
 This Numerical pipeline was created as part of a Master's thesis. The aim of the project was to investigate if micro-indentation can characterise soft materials. Two FE models were used for the investigation. It was not known if the indentation method would work and hence the use of two FE models instead of a physical experiment and one FE model. Both FE models were thus modelled using the same testing conditions, but with minor changes explained further. The main goal behind the two FE models were that one model represents DIC data, the "Experimental" model, which used a constant Mooney-Rivlin three parameter material model. The second FE model, the "Numerical" model, is the model used and within the inverse FE analysis and the material model here was changed and optimised during the optimisation procedure to determine the feasibility of the indentation method by comparing the displacement results. 
@@ -136,7 +139,7 @@ Saving output file from the run window:
 ```
 Open Post File > Save
 ```
-Saving the "pointfem" (from the sym_test_fem.mud model)  and "pointexp" (from the sym_test_exp.mud model) files from the post-processing window, these files should be saved in the same folder as the various Python codes:
+Saving the "pointfem" (from the sym_test_fem.mud model)  and "pointexp" (from the sym_test_exp.mud model) files from the post-processing window, these files should be saved in the same folder as the MSC Marc files:
 ```
 Open Post File > History plot > All Incs > Add Curves > x-axis : - Global variables  > y-axis : - Contact Body Variables
                                                                  - time                         - Contact Body: Load (indenter)
